@@ -1,5 +1,4 @@
 ﻿using System;
-using Acesso;
 
 namespace Conceitos;
 
@@ -17,6 +16,7 @@ class POO
         private string aac = "";
         private char c = 'a';
         protected float salario = 1.520f;
+        public static int abc = 12;
 
 
         public string RetornoHeranca(string nome, string idade)
@@ -32,6 +32,7 @@ class POO
         {
 
             // Instanciar o meu objeto
+
             Pessoa obj = new Pessoa();
             obj.idade = 22;
             obj.nome = "Vitor Mateus Hirt";
@@ -54,7 +55,7 @@ class POO
 
             Console.WriteLine(s.salario + s.Salario2);
 
-            Acesso.Acesso acesso = new Acesso.Acesso();
+            Acessos.Acesso acesso = new Acessos.Acesso();
 
             acesso.Aluno();
 
@@ -67,6 +68,9 @@ class POO
             Console.WriteLine("\n" + i);
 
             Console.WriteLine(s.RetornoHeranca("Vitor", "22"));
+
+            Console.WriteLine($"Somar " + (Result.abc * 10));
+
 
             // Polimorfismo
 
@@ -104,6 +108,29 @@ class POO
 
             objetG.ValeAlimentacao(2000);
             objetE.ValeTransporte(2000);  // Usando da classse Imposto, já que não tem criado no classe Gerente 
+
+
+            // Abstract
+
+            PessoaFisicas.PessoaFisica PF = new PessoaFisicas.PessoaFisica();
+
+            PF.TaxaEmprestimo(1500);
+
+            Console.WriteLine(PF);
+
+            PessoaJuridicas.PessoaJuridica PJ = new PessoaJuridicas.PessoaJuridica();
+
+            PJ.TaxaEmprestimo(100);
+
+            Console.WriteLine(PJ);
+
+
+            // Interfaces
+
+            Calculo.Calculos calculos = new Calculo.Calculos();
+
+            calculos.Somar(10, 20);
+            calculos.subtrair(10, 20);
 
         }
     }
