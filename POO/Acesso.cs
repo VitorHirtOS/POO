@@ -20,6 +20,7 @@ namespace Acesso
 
         private string aluno = "";
         private int nota1, nota2;
+        private string nome = "Vitor Hirt";
 
         public void Aluno()
         {
@@ -44,9 +45,12 @@ namespace Acesso
             
         }
 
-        public void Nome(string nome)
+
+
+        public void Nome(string nome) // Caso eu não passe o valor por tipo referência, o valor que eu passasse iria ser do atributo 
         {
-            Console.Write($"Meu nome: {nome}");
+            Console.Write($"Meu nome: {nome}\n"); // Tipo referência
+            Console.Write($"Meu nome: {this.nome}"); // Referência de atributo 
         }
 
         /* Get; Set; */
